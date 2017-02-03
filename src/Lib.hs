@@ -1,5 +1,5 @@
 module Lib
-    ( someFunc
+    ( start
     ) where
 
 import qualified Data.Vector as V
@@ -16,5 +16,5 @@ convertVector2Str len vec = let vecStr = fmap (\x -> convertNum2Str x len) vec i
 printMatrix :: Int -> (V.Vector (V.Vector Int)) -> IO ()
 printMatrix len vec = mapM_ putStrLn (fmap (convertVector2Str len) vec)
 
-someFunc :: IO ()
-someFunc = printMatrix 5 (V.generate 4 (\n -> V.replicate 4 n))
+start :: IO ()
+start = printMatrix 5 (V.generate 4 (\n -> V.replicate 4 n))
